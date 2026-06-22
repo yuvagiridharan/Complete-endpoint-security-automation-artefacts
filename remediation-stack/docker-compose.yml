@@ -1,0 +1,43 @@
+services:
+  webhook_listener:
+    build: ./webhook_listener
+    container_name: webhook_listener
+    ports:
+      - "5001:5001"
+    environment:
+      - AI_TRIAGE_URL=http://ai_triage:5003
+      - ORCHESTRATOR_URL=http://orchestrator:5002
+    networks:
+      - labnet
+    restart: unless-stopped
+
+  ai_triage:
+    build: ./ai_triage
+    container_name: ai_triage
+    ports:
+      - "5003:5003"
+    environment:
+      - OLLAMA_URL=http://172.18.0.1:11434
+      - OLLAMA_MODEL=llama3.2:1b
+    networks:
+      - labnet
+    restart: unless-stopped
+
+  orchestrator:
+    build: ./orchestrator
+    container_name: orchestrator
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./audit_log:/audit_log
+      - ./lab_key:/root/.ssh/lab_key
+    environment:
+      - ALLOWED_ACTIONS=isolate_host,disable_account,kill_process,remove_cron,enable_account,unisolate_host
+      - ALLOWED_TARGETS=172.16.120.134,172.16.120.132,172.16.120.131
+    networks:
+      - labnet
+    restart: unless-stopped
+
+networks:
+  labnet:
+    driver: bridge

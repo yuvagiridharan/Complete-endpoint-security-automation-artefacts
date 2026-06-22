@@ -1,0 +1,10 @@
+
+User accounts for \\YUVA
+
+-------------------------------------------------------------------------------
+Administrator            attacker                 DefaultAccount           
+dust                     Guest                    labuser                  
+mode02                   newuser                  profile                  
+testuser                 WDAGUtilityAccount       yuvag                    
+The command completed successfully.
+

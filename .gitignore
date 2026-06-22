@@ -1,0 +1,12 @@
+*.pem
+*.key
+lab_key
+lab_key.pub
+id_rsa*
+audit_log/
+*.jsonl
+*password*
+*credential*
+.DS_Store
+__pycache__/
+*.pyc

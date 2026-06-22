@@ -1,0 +1,12 @@
+Alias name     administrators
+Comment        Administrators have complete and unrestricted access to the computer/domain
+
+Members
+
+-------------------------------------------------------------------------------
+Administrator
+attacker
+testuser
+yuvag
+The command completed successfully.
+
