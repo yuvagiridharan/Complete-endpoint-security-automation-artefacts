@@ -1,7 +1,7 @@
 # B9CY110 Endpoint Security Lab
 ## Automated Incident Response and Remediation
 
-**Student:** Karnishwar R | **Module:** B9CY110
+**Student:** Yuvagiridharan U | **Module:** B9CY110
 **Programme:** MSc Cybersecurity | **Institution:** Dublin Business School
 
 ---
